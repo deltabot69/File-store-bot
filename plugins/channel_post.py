@@ -26,18 +26,18 @@ async def batch(client: Client, message: Message):
             break
         else:
             await first_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is taken from DB Channel", quote = True)
-            continue
+#             continue
 
-    while True:
-        try:
-            second_message = await client.ask(text = "Forward the Last Message from DB Channel (with Quotes)..\nor Send the DB Channel Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
-        except:
-            return
-        s_msg_id = await get_message_id(client, second_message)
-        if s_msg_id:
-            break
-        else:
-            await second_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is taken from DB Channel", quote = True)
+#     while True:
+#         try:
+#             second_message = await client.ask(text = "Forward the Last Message from DB Channel (with Quotes)..\nor Send the DB Channel Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+#         except:
+#             return
+#         s_msg_id = await get_message_id(client, second_message)
+#         if s_msg_id:
+#             break
+#         else:
+#             await second_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is taken from DB Channel", quote = True)
             
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(['start','users','broadcast','batch','genlink','stats','followus']))
