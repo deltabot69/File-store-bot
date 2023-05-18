@@ -15,7 +15,7 @@ API_HASH = os.environ.get("API_HASH", "fc9943e89e1739f9c29140b360ef80cc")
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001801400543"))
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "1966376217 738010143"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "738010143"))
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://filestore1432:filestore1432@cluster0.wdbmpwl.mongodb.net/?retryWrites=true&w=majority")
